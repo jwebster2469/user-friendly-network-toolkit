@@ -1,0 +1,8 @@
+scapy
+psutil
+dash
+plotly
+python-nmap
+geoip2
+python-dotenv
+openai
