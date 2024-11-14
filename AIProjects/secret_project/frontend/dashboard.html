@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI-Powered Listing Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI-Powered Listing Assistant</h1>
+        <nav>
+            <ul>
+                <li><a href="auth.html">Authentication</a></li>
+                <li><a href="create-listing.html">Create Listing</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="results.html">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dashboard-section">
+            <h2>Local Opportunities and Trending Items</h2>
+            <div>
+                <label for="location">Enter your location:</label>
+                <input type="text" id="location" placeholder="Latitude,Longitude" required>
+                <button id="fetch-opportunities">Fetch Opportunities</button>
+            </div>
+            <div id="opportunities-results" class="results-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 AI-Powered Listing Assistant</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

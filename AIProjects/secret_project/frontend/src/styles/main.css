@@ -1,0 +1,240 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom Properties from Theme */
+:root {
+    /* Colors */
+    --color-primary: #1976d2;
+    --color-primary-light: #63a4ff;
+    --color-primary-dark: #004ba0;
+    --color-secondary: #dc004e;
+    --color-success: #4caf50;
+    --color-warning: #ff9800;
+    --color-error: #f44336;
+    --color-info: #2196f3;
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-secondary: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'SF Mono', 'Roboto Mono', monospace;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-primary);
+    line-height: 1.5;
+    color: theme('colors.gray.900');
+    background-color: theme('colors.gray.50');
+}
+
+/* Conversion-Optimized Components */
+
+/* Buttons */
+.btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md font-semibold text-white transition-all duration-200 ease-in-out;
+    transform: translateY(0);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    @apply shadow-lg;
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    @apply hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    @apply hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500;
+}
+
+/* Call-to-Action Buttons */
+.btn-cta {
+    @apply text-lg px-8 py-4 font-bold tracking-wide;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-primary-light));
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+
+.btn-cta:hover {
+    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+}
+
+/* Forms */
+.form-input {
+    @apply block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.form-group {
+    @apply mb-6;
+}
+
+/* Cards */
+.card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+}
+
+.card-header {
+    @apply px-6 py-4 border-b border-gray-200;
+}
+
+.card-body {
+    @apply px-6 py-4;
+}
+
+.card-footer {
+    @apply px-6 py-4 bg-gray-50;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    @apply relative p-8 bg-white rounded-2xl shadow-xl transform transition-transform duration-300;
+}
+
+.pricing-card:hover {
+    @apply -translate-y-2;
+}
+
+.pricing-card.featured {
+    @apply ring-2 ring-primary;
+}
+
+/* Navigation */
+.nav-link {
+    @apply text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+}
+
+.nav-link.active {
+    @apply text-primary font-semibold;
+}
+
+/* Alerts */
+.alert {
+    @apply p-4 rounded-md mb-4;
+}
+
+.alert-success {
+    @apply bg-green-50 text-green-800 border border-green-200;
+}
+
+.alert-error {
+    @apply bg-red-50 text-red-800 border border-red-200;
+}
+
+/* Loading States */
+.loading {
+    @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Tooltips */
+.tooltip {
+    @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+    @apply visible z-50;
+}
+
+/* Progress Indicators */
+.progress-bar {
+    @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.progress-bar-fill {
+    @apply h-full bg-primary transition-all duration-300 ease-in-out;
+}
+
+/* Conversion Elements */
+
+/* Trust Badges */
+.trust-badge {
+    @apply flex items-center justify-center p-4 bg-gray-50 rounded-lg;
+}
+
+/* Social Proof */
+.testimonial-card {
+    @apply p-6 bg-white rounded-xl shadow-md;
+}
+
+.testimonial-avatar {
+    @apply w-12 h-12 rounded-full object-cover;
+}
+
+/* Feature Highlights */
+.feature-card {
+    @apply p-6 border border-gray-200 rounded-xl hover:border-primary transition-colors duration-200;
+}
+
+/* Call-to-Action Sections */
+.cta-section {
+    @apply py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary-dark to-primary text-white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-in-out;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #90caf9;
+        --color-primary-light: #c3fdff;
+        --color-primary-dark: #5d99c6;
+    }
+
+    body {
+        @apply bg-gray-900 text-gray-100;
+    }
+
+    .card {
+        @apply bg-gray-800 border-gray-700;
+    }
+
+    .form-input {
+        @apply bg-gray-700 border-gray-600 text-white;
+    }
+
+    .nav-link {
+        @apply text-gray-300 hover:text-white;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: theme('screens.sm')) {
+    .btn {
+        @apply w-full;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+}

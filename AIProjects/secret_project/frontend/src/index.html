@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Listing Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="assets/images/logo.png" alt="Logo" class="logo">
+        <h1>AI-Powered Listing Assistant</h1>
+    </header>
+    <main>
+        <section id="auth-section">
+            <h2>User Authentication</h2>
+            <form id="register-form">
+                <h3>Register</h3>
+                <label for="register-username">Username:</label>
+                <input type="text" id="register-username" name="register-username" required>
+                
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" name="register-password" required>
+                
+                <button type="button" id="register-button">Register</button>
+            </form>
+            <form id="login-form">
+                <h3>Login</h3>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="login-username" required>
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+                
+                <button type="button" id="login-button">Login</button>
+            </form>
+        </section>
+        <section id="product-input">
+            <h2>Create a New Listing</h2>
+            <form id="product-form">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+                
+                <label for="product-description">Description:</label>
+                <textarea id="product-description" name="product-description" required></textarea>
+                
+                <label for="product-image">Upload Image:</label>
+                <input type="file" id="product-image" name="product-image" accept="image/*">
+                
+                <button type="button" id="capture-image">Capture Image</button>
+                <img id="captured-image" alt="Captured Image" style="display:none; width: 100%; max-width: 300px; margin-top: 10px;">
+                
+                <button type="button" id="generate-content">Generate Content</button>
+            </form>
+        </section>
+        <section id="product-listings">
+            <!-- Product cards will be dynamically generated here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 AI-Powered Listing Assistant</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

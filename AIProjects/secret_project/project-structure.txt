@@ -1,0 +1,19 @@
+Project Structure:
+- /frontend
+  - /src
+    - index.html
+    - styles.css
+    - app.js
+  - /assets
+    - /images
+- /backend
+  - /api
+    - /models
+    - /controllers
+    - /routes
+  - /utils
+- /config
+  - config.js
+- /docs
+  - README.md
+  - requirements.md
